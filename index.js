@@ -27,6 +27,11 @@ app.post('/', multer.any(), function(req, res){
     req.files.map(funtime => {
         const blob = bucket.file(`${funtime.originalname}`); // PUT EXTENSION IN FILE NAME FEK
         const blobStream = blob.createWriteStream();
+        // const blobStream = blob.createWriteStream({
+        //     metadata: {
+        //       contentType: req.file.mimetype
+        //     }
+        // });
         blobStream.on('finish', () => {
             console.log("uploaded a file");
         });
