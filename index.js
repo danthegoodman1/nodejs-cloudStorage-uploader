@@ -5,6 +5,7 @@ const storage = Storage({
   projectId: 'prime-pod-200918',
   keyFilename: './keyfile.json'
 });
+// the above keyfile comes from making API&Services>Credentials>Create Credentials>OAuth Client ID>Web Application>... download the JSON
 const bucket = storage.bucket(CLOUD_BUCKET);
 const express = require('express');
 const Multer = require('multer');
